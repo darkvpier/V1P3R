@@ -1,7 +1,6 @@
 from django.db import models
-from django.db.models.fields import CharField
 
-from django.contrib.auth.models import User
+
 
 class EventModel(models.Model):
 
@@ -19,7 +18,7 @@ class EventModel(models.Model):
     photo = models.ImageField(upload_to='event_photo/', null = True, blank=True)
     thumbnail = models.ImageField(upload_to='event_thumbnail/', null=True, blank=True)
 
-    coordinator =  models.ForeignKey(User, on_delete=models.CASCADE)
+    # coordinator =  models.ForeignKey(Coordinator, on_delete=models.CASCADE)
 
 
     def __str__(self):
