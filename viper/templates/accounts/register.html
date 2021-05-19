@@ -54,20 +54,19 @@
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         {{ form.password }}
                                     </div>
-                                    <div class="col-sm-6">
+                                   <div class="col-sm-6">
                                         {{ form.password1 }}
-                                    </div>
+                                    </div> 
                                 </div>
                                 <button class="btn btn-primary btn-user btn-block" type="submit">
                                     Register Account
                                 </button>
                                 <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
+                                {% for message in form.errors %}
+                                <div class="text-center danger">
+                                <div class="d-inline-flex p-2 bd-highlight center info">{{ message }}</div>
+                                </div>
+                                {% endfor %}
                             </form>
                             <hr>
                             <div class="text-center">
@@ -81,7 +80,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Bootstrap core JavaScript-->

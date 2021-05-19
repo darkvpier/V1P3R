@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
+from .models import User
 from .forms import ProfileCreationForm
 
 # Create your views here.
@@ -13,15 +14,17 @@ def SignUp(request):
         form = ProfileCreationForm(request.POST)
         if form.is_valid():
             form.save()
-
             email = form.cleaned_data.get('email')
+            if User.objects.get(email=email):
+                messages.error(request, 'Email is already taken')
+
             password = form.cleaned_data.get('password')
             user = authenticate(request, email=email, password=password)
             if user.is_authenticated():
                 login(request, user)
                 return redirect('events:coordinator-dashboard')
             else:
-                messages.error(request, "Invalid Credentionals")
+                messages.error(request, "Try again")
     else:
         form = ProfileCreationForm()
     return render(request, 'accounts/register.html', {'form':form})
