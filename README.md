@@ -25,21 +25,15 @@ VIP3R is an event portal created as a part of Tinkerhub- BFH
   	
   	<!--LISTS-->
   	<!--unordered:bullet point-->
-  	<ul>
+  	<ol>
   		<li>event 1</li>
   		<li>event 2</li>
   		<li>event 3</li>
   		<li>event 4</li>
-  	</ul>
+  	</ol>
 
   	<!-- next is ordered: numbered-->
-  	<ol>
-
-  <li>list it1 </li>
-  <li>list it2</li>	
-  	<li>list it3</li>
-  	<li>list it4</li>
-  	</ol> 
+  	
 <!--tables-->
 <table>
 	<thead>   <!--table heading-->
